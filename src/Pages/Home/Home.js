@@ -1,6 +1,5 @@
 import React from "react";
 import FeedContent from "../../components/FeedContent";
-import Navbar from "../../components/Navbar/Navbar";
 import RightSidebar from "../../components/RightSidebar";
 import LeftSidebar from './../../components/LeftSidebar';
 
@@ -8,7 +7,7 @@ import LeftSidebar from './../../components/LeftSidebar';
 function Home() {
   return (
     <div className="md:px-8">
-      <Navbar />
+      
       <div className="w-full flex">
         <div className="w-1/5">
           <RightSidebar />
