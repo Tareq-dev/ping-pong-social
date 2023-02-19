@@ -16,7 +16,7 @@ function RightSidebar() {
           <p>Figma Comunity</p>
         </div>
         <div className="flex justify-center items-center ml-6 text-md">
-          <button class="btn btn-xs btn-outline btn-info">Join</button>
+          <button className="btn btn-xs btn-outline btn-info">Join</button>
         </div>
       </div>
       <div className="flex">
@@ -29,7 +29,7 @@ function RightSidebar() {
           <p>Figma Comunity</p>
         </div>
         <div className="flex justify-center items-center ml-6 text-md">
-          <button class="btn btn-xs btn-outline btn-info">Join</button>
+          <button className="btn btn-xs btn-outline btn-info">Join</button>
         </div>
       </div>
       <h4 className="text-xl font-semibold text-gray-400 pb-4 pt-14">
@@ -45,7 +45,7 @@ function RightSidebar() {
           <p>Figma Comunity</p>
         </div>
         <div className="flex justify-center items-center ml-4 text-md">
-          <button class="btn btn-xs btn-outline btn-info">Follow</button>
+          <button className="btn btn-xs btn-outline btn-info">Follow</button>
         </div>
       </div>
       <div className="flex">
@@ -58,7 +58,7 @@ function RightSidebar() {
           <p>Figma Comunity</p>
         </div>
         <div className="flex justify-center items-center ml-4 text-md">
-          <button class="btn btn-xs btn-outline btn-info">Follow</button>
+          <button className="btn btn-xs btn-outline btn-info">Follow</button>
         </div>
       </div>
     </div>

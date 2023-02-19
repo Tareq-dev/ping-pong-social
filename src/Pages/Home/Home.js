@@ -1,8 +1,9 @@
 import React from "react";
-import FeedContent from "../../components/Navbar/FeedContent";
-import LeftSidebar from "../../components/Navbar/LeftSidebar";
+import FeedContent from "../../components/FeedContent";
 import Navbar from "../../components/Navbar/Navbar";
-import RightSidebar from "../../components/Navbar/RightSidebar";
+import RightSidebar from "../../components/RightSidebar";
+import LeftSidebar from './../../components/LeftSidebar';
+
 
 function Home() {
   return (
