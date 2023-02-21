@@ -8,6 +8,9 @@ import RequireAuth from "./Pages/Login/RequireAuth";
 import SignUp from "./Pages/Login/SignUp/SignUp";
 import Media from "./Pages/Media/Media";
 import Profile from "./Pages/Profile/Profile";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
@@ -32,6 +35,7 @@ function App() {
         />
         <Route path="/login" element={<CustomLogin />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="*" element={<NotFound />} />
         <Route
           path="/profile"
           element={
@@ -49,6 +53,7 @@ function App() {
           }
         />
       </Routes>
+      <ToastContainer />
     </div>
   );
 }

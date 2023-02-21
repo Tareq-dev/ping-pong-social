@@ -1,7 +1,6 @@
 import React from "react";
-import { ImHeart } from "react-icons/im";
-import { FaRegCommentDots } from "react-icons/fa";
 import usePosts from "../Hooks/usePosts";
+import PostContent from "./PostContent";
 
 function MediaContent() {
   const [posts] = usePosts([]);
@@ -69,35 +68,7 @@ function MediaContent() {
       {/*---------------------------- post------------------------------  */}
       <h2 className="text-xl ml-4 font-semibold">All Post</h2>
       {posts.map((post) => (
-        <div
-          post={post}
-          key={post._id}
-          className="border shadow-sm p-2 rounded-md my-4"
-        >
-          <div className="flex">
-            <label className="btn btn-ghost btn-circle avatar">
-              <div className="w-12 rounded-full">
-                <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="" />
-              </div>
-            </label>
-            <div className="flex justify-center items-center ml-2 text-md">
-              <p className="font-bold text-xl">{post.name}</p>
-            </div>
-          </div>
-          <p className="text-md text-justify px-5 py-1">{post.content}</p>
-          <img className="px-4 py-2" src={post.picture} alt="" />
-          <div className="flex py-4 justify-between px-14">
-            <div className="flex">
-              <ImHeart size={24} />
-              <span className="ml-4">{post.love} People</span>
-            </div>
-            <div className="flex">
-              <FaRegCommentDots size={24} />
-              <span className="ml-4">{post.comments.length} Comment</span>
-            </div>
-            <p>Details</p>
-          </div>
-        </div>
+        <PostContent post={post} key={post._id} />
       ))}
     </div>
   );

@@ -6,6 +6,7 @@ import { FaUserFriends } from "react-icons/fa";
 import { RiVideoAddFill } from "react-icons/ri";
 import { HiOutlinePhotograph } from "react-icons/hi";
 import { GoFileSubmodule } from "react-icons/go";
+import { Link } from 'react-router-dom';
 
 function LeftSidebar() {
   return (
@@ -14,29 +15,28 @@ function LeftSidebar() {
         Menu
       </h4>
       <ul className="text-xl">
-        <li className="flex items-center py-2">
-          {" "}
+        <Link to='/' className="flex items-center py-2">
           <ImHome className="mx-4" size={20} /> Home
-        </li>
-        <li className="flex items-center py-2">
+        </Link>
+        <Link to='/media' className="flex items-center py-2">
           <MdOutlinePostAdd className="mx-4" size={20} /> Post
-        </li>
-        <li className="flex items-center py-2">
-          {" "}
+        </Link>
+        <Link to='*' className="flex items-center py-2">
+          
           <MdMessage className="mx-4" size={20} /> Message
-        </li>
-        <li className="flex items-cente py-2">
+        </Link>
+        <Link to='*' className="flex items-cente py-2">
           <FaUserFriends className="mx-4" size={20} /> Friends
-        </li>
-        <li className="flex items-center py-2">
+        </Link>
+        <Link to='*' className="flex items-center py-2">
           <RiVideoAddFill className="mx-4" size={20} /> Videos
-        </li>
-        <li className="flex items-center py-2">
+        </Link>
+        <Link to='*' className="flex items-center py-2">
           <HiOutlinePhotograph className="mx-4" size={20} /> Photos
-        </li>
-        <li className="flex items-center py-2">
+        </Link>
+        <Link to='*' className="flex items-center py-2">
           <GoFileSubmodule className="mx-4" size={20} /> File
-        </li>
+        </Link>
       </ul>
     </div>
   );

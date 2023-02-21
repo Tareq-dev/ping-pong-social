@@ -1,8 +1,15 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "./../firebase.auth";
+import { useNavigate } from 'react-router-dom';
 
 function EditProfile() {
+  const [user] = useAuthState(auth);
+  const email = user?.email;
+  const navigate = useNavigate()
+
   const { register, handleSubmit, reset } = useForm();
 
   const imageStorageKey = "1b2c7037c7c3024a88877acb8b2cd8fd";
@@ -22,16 +29,14 @@ function EditProfile() {
           const img = result.data.url;
           const userData = {
             name: data.name,
-            email: data.email,
             course: data.course,
             subject: data.subject,
             university: data.university,
             address: data.address,
             picture: img,
           };
-          console.log(userData);
-          fetch("http://localhost:5000/profile", {
-            method: "POST",
+          fetch(`http://localhost:5000/profile/${email}`, {
+            method: "PUT",
             headers: {
               "content-type": "application/json",
             },
@@ -39,7 +44,7 @@ function EditProfile() {
           })
             .then((res) => res.json())
             .then((data) => {
-              if (data.insertedId) {
+              if (data.acknowledged === true) {
                 toast.success("Product added!", {
                   position: "top-center",
                   autoClose: 4000,
@@ -51,6 +56,7 @@ function EditProfile() {
                   theme: "colored",
                 });
                 reset();
+                navigate('/profile')
               }
             });
         }
@@ -67,22 +73,16 @@ function EditProfile() {
         </label>
         <input
           {...register("name")}
+          required
           className="border-2 rounded-lg px-4 py-2 block w-80"
           type="text"
-        />
-        <label htmlFor="" className="text-md mx-2">
-          Email
-        </label>
-        <input
-          {...register("email")}
-          className="border-2 rounded-lg px-4 py-2 block w-80"
-          type="email"
         />
         <label htmlFor="" className="text-md mx-2">
           Study - Course Name
         </label>
         <input
           {...register("course")}
+          required
           className="border-2 rounded-lg px-4 py-2 block w-80"
           type="text"
         />
@@ -91,6 +91,7 @@ function EditProfile() {
         </label>
         <input
           {...register("subject")}
+          required
           className="border-2 rounded-lg px-4 py-2 block w-80"
           type="text"
         />
@@ -99,6 +100,7 @@ function EditProfile() {
         </label>
         <input
           {...register("university")}
+          required
           className="border-2 rounded-lg px-4 py-2 block w-80"
           type="text"
         />
@@ -107,6 +109,7 @@ function EditProfile() {
         </label>
         <input
           {...register("address")}
+          required
           className="border-2 rounded-lg px-4 py-2 block w-80"
           type="text"
         />
@@ -115,6 +118,7 @@ function EditProfile() {
         </label>
         <input
           {...register("picture")}
+          required
           type="file"
           className="file-input file-input-bordered  block file-input-sm w-full max-w-xs"
         />
