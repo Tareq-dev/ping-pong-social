@@ -15,21 +15,21 @@ function SignUp() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
-  // const navigate = useNavigate();
-  // const location = useLocation();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
-  // let from = location?.state?.from?.pathname || "/";
+  let from = location?.state?.from?.pathname || "/";
   if (error || updateError) {
     toast.error(error.message);
   }
   if (loading || updating) {
     return <p>Loading.........</p>;
   }
-  // if (user) {
-  //   navigate(from, { replace: true });
-  // }
+  if (user) {
+    navigate(from, { replace: true });
+  }
   const handleCreateUser = async (event) => {
     event.preventDefault();
     if (password === confirmPassword) {
@@ -97,9 +97,9 @@ function SignUp() {
         </div>
         <p className="text-center mt-5">
           Already have an account?
-          {/* <Link className="text-primary px-2" to="/login">
+          <Link className="text-primary px-2" to="/login">
             Login
-          </Link> */}
+          </Link>
         </p>
         <div className="text-center py-5 text-gray-400">
           ________________OR________________

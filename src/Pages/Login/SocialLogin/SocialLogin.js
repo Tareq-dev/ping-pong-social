@@ -5,14 +5,14 @@ import auth from "../../../firebase.auth";
 
 function SocialLogin() {
   const [signInWithGoogle, user, loading] = useSignInWithGoogle(auth);
-//   const navigate = useNavigate();
+  const navigate = useNavigate();
 
-//   const location = useLocation();
-//   let from = location.state?.from?.pathname || "/";
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
 
-//   if (user) {
-//     navigate(from, { replace: true });
-//   }
+  if (user) {
+    navigate(from, { replace: true });
+  }
 
   if (loading) {
     return <p>Loading.......</p>;

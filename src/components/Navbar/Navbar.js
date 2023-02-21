@@ -1,6 +1,12 @@
+import { signOut } from "firebase/auth";
 import React from "react";
+import { Link } from "react-router-dom";
+import auth from "../../firebase.auth";
 
 function Navbar() {
+  const logOut = () => {
+    signOut(auth);
+};
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -26,28 +32,28 @@ function Navbar() {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-            <a>Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a>Media</a>
+            <Link to="/media">Media</Link>
           </li>
           <li>
-            <a>Message</a>
+            <Link to="/message">Message</Link>
           </li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">Ping Pong</a>
+        <Link to='/' className="btn btn-ghost normal-case text-xl">Ping Pong</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 font-bold">
-          <li>
-            <a>Home</a>
+        <li>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a>Media</a>
+            <Link to="/media">Media</Link>
           </li>
           <li>
-            <a>Message</a>
+            <Link to="/message">Message</Link>
           </li>
         </ul>
       </div>
@@ -55,17 +61,17 @@ function Navbar() {
       <div className="dropdown dropdown-end">
       <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
-          <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+          <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="" />
         </div>
       </label>
       <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
         <li>
-          <a className="justify-between">
+          <Link to='/profile' className="justify-between">
             Profile
             <span className="badge">New</span>
-          </a>
+          </Link>
         </li>
-        <li><a>Logout</a></li>
+        <li><button onClick={logOut}>Logout</button></li>
       </ul>
     </div>
       </div>

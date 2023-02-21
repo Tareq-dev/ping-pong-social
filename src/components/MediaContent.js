@@ -1,17 +1,13 @@
 import React from "react";
-import { FcAddImage } from "react-icons/fc";
 import { ImHeart } from "react-icons/im";
 import { FaRegCommentDots } from "react-icons/fa";
-import usePosts from './../Hooks/usePosts';
+import usePosts from "../Hooks/usePosts";
 
-function FeedContent() {
+function MediaContent() {
   const [posts] = usePosts([]);
-
-  const sortedPosts = posts.slice().sort((a, b) => b.love - a.love);
-
   return (
     <div>
-      <div className="flex justify-center">
+      <div className="flex justify-center py-10">
         <div className="mx-4">
           <div className="avatar">
             <div className="w-14 rounded-full ring ring-blue-200 ring-offset-base-100 ring-offset-2">
@@ -26,7 +22,7 @@ function FeedContent() {
               <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="" />
             </div>
           </div>
-          <p className="text-center">Alexa</p>
+          <p className="text-center">Tamina</p>
         </div>
         <div className="mx-4">
           <div className="avatar">
@@ -34,7 +30,7 @@ function FeedContent() {
               <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="" />
             </div>
           </div>
-          <p className="text-center">Alexa</p>
+          <p className="text-center">Shila</p>
         </div>
         <div className="mx-4">
           <div className="avatar">
@@ -42,7 +38,7 @@ function FeedContent() {
               <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="" />
             </div>
           </div>
-          <p className="text-center">Alexa</p>
+          <p className="text-center">Farha</p>
         </div>
         <div className="mx-4">
           <div className="avatar">
@@ -50,7 +46,7 @@ function FeedContent() {
               <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="" />
             </div>
           </div>
-          <p className="text-center">Alexa</p>
+          <p className="text-center">Ayshu</p>
         </div>
         <div className="mx-4">
           <div className="avatar">
@@ -58,7 +54,7 @@ function FeedContent() {
               <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="" />
             </div>
           </div>
-          <p className="text-center">Alexa</p>
+          <p className="text-center">Nilima</p>
         </div>
         <div className="mx-4">
           <div className="avatar">
@@ -66,32 +62,13 @@ function FeedContent() {
               <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="" />
             </div>
           </div>
-          <p className="text-center">Alexa</p>
+          <p className="text-center">Anima</p>
         </div>
       </div>
-      <form className="border p-6 my-6 rounded-md shadow-sm">
-        <textarea
-          placeholder="What's on your mind?"
-          className="textarea textarea-bordered textarea-lg w-full"
-        ></textarea>
-        <div className="flex w-full justify-center items-center">
-          <label className="label w-1/3">
-            <input type="file" required />
-            <div className="flex px-4">
-              <FcAddImage size={24} className="mr-2" />
-              Add Photo
-            </div>
-          </label>
-          <input
-            className="w-2/3 border font-bold bg-green-300 h-9 rounded-md"
-            type="submit"
-            value="Submit"
-          />
-        </div>
-      </form>
+
       {/*---------------------------- post------------------------------  */}
-      <h2 className="text-xl ml-4 font-semibold">Most Popular Post</h2>
-      {sortedPosts.map((post) => (
+      <h2 className="text-xl ml-4 font-semibold">All Post</h2>
+      {posts.map((post) => (
         <div
           post={post}
           key={post._id}
@@ -126,4 +103,4 @@ function FeedContent() {
   );
 }
 
-export default FeedContent;
+export default MediaContent;

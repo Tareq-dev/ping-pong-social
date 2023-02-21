@@ -10,18 +10,18 @@ function CustomLogin() {
     useSignInWithEmailAndPassword(auth);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-//   const navigate = useNavigate();
-//   const location = useLocation();
-//   let from = location.state?.from?.pathname || "/";
+  const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   if (error) {
     toast.error(error.message);
   }
   if (loading) {
     return <p>loading........</p>;
   }
-//   if (user) {
-//     navigate(from, { replace: true });
-//   }
+  if (user) {
+    navigate(from, { replace: true });
+  }
   return (
     <div className="py-10">
       <div className="rounded-lg m-4">
@@ -51,7 +51,7 @@ function CustomLogin() {
               onChange={(e) => setPassword(e.target.value)}
             />
             <p className="my-2">
-              {/* <Link to="/reset">Forgot Password ?</Link> */}
+              <Link to="/reset">Forgot Password ?</Link>
             </p>
 
             <button
@@ -64,9 +64,9 @@ function CustomLogin() {
         </div>
         <p className="text-center mt-5">
           New to Ping Pong?
-          {/* <Link className="text-primary px-2" to="/register">
+          <Link className="text-primary px-2" to="/signup">
             Create new account .
-          </Link> */}
+          </Link>
         </p>
         <div className="text-center py-5 text-gray-400">
           ________________OR________________

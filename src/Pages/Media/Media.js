@@ -1,9 +1,9 @@
 import React from "react";
-import FeedContent from "../../components/FeedContent";
+import LeftSidebar from "../../components/LeftSidebar";
+import MediaContent from "../../components/MediaContent";
 import RightSidebar from "../../components/RightSidebar";
-import LeftSidebar from "./../../components/LeftSidebar";
 
-function Home() {
+function Media() {
   return (
     <div className="md:px-8">
       <div className="w-full flex">
@@ -11,7 +11,7 @@ function Home() {
           <RightSidebar />
         </div>
         <div className="w-3/5 px-4 py-8">
-          <FeedContent />
+          <MediaContent />
         </div>
         <div className="w-1/5">
           <LeftSidebar />
@@ -21,4 +21,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Media;

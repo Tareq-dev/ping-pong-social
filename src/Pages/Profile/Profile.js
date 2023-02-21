@@ -1,24 +1,25 @@
 import React from "react";
-import FeedContent from "../../components/FeedContent";
+import LeftSidebar from "../../components/LeftSidebar";
 import RightSidebar from "../../components/RightSidebar";
-import LeftSidebar from "./../../components/LeftSidebar";
 
-function Home() {
+import MainProfile from "./MainProfile";
+
+function Profile() {
   return (
     <div className="md:px-8">
       <div className="w-full flex">
         <div className="w-1/5">
-          <RightSidebar />
+          <LeftSidebar />
         </div>
         <div className="w-3/5 px-4 py-8">
-          <FeedContent />
+          <MainProfile />
         </div>
         <div className="w-1/5">
-          <LeftSidebar />
+          <RightSidebar />
         </div>
       </div>
     </div>
   );
 }
 
-export default Home;
+export default Profile;
