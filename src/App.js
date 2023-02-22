@@ -11,6 +11,7 @@ import Profile from "./Pages/Profile/Profile";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import NotFound from "./components/NotFound";
+import PostDetail from './Pages/PostDetail/PostDetail';
 
 function App() {
   return (
@@ -41,6 +42,14 @@ function App() {
           element={
             <RequireAuth>
               <Profile />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/details/:id"
+          element={
+            <RequireAuth>
+              <PostDetail />
             </RequireAuth>
           }
         />

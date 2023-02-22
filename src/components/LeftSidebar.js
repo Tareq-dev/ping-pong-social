@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 
 function LeftSidebar() {
   return (
-    <div>
+    <div className="hidden md:block">
       <h4 className="text-xl font-semibold text-gray-400 ml-8 pb-4 pt-14">
         Menu
       </h4>

@@ -10,7 +10,7 @@ function Media() {
         <div className="w-1/5">
           <RightSidebar />
         </div>
-        <div className="w-3/5 px-4 py-8">
+        <div className="w-full md:w-3/5 md:px-4 md:py-8">
           <MediaContent />
         </div>
         <div className="w-1/5">

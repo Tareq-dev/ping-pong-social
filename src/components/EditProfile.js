@@ -3,12 +3,12 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "./../firebase.auth";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 function EditProfile() {
   const [user] = useAuthState(auth);
   const email = user?.email;
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const { register, handleSubmit, reset } = useForm();
 
@@ -35,7 +35,7 @@ function EditProfile() {
             address: data.address,
             picture: img,
           };
-          fetch(`http://localhost:5000/profile/${email}`, {
+          fetch(`https://ping-pong-social.onrender.com/profile/${email}`, {
             method: "PUT",
             headers: {
               "content-type": "application/json",
@@ -56,7 +56,7 @@ function EditProfile() {
                   theme: "colored",
                 });
                 reset();
-                navigate('/profile')
+                navigate("/profile");
               }
             });
         }

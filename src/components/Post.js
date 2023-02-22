@@ -29,14 +29,13 @@ function Post() {
           const postData = {
             name: user?.displayName || profile?.name,
             picture: img,
-            userPicture: user?.photoURL || profile.picture,
+            userPicture: profile.picture,
             content: data.content,
             email: email,
             love: 0,
             comments: [],
           };
-          console.log(postData);
-          fetch("http://localhost:5000/posts", {
+          fetch("https://ping-pong-social.onrender.com/posts", {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -45,7 +44,6 @@ function Post() {
           })
             .then((res) => res.json())
             .then((data) => {
-              console.log(data);
               if (data.acknowledged === true) {
                 toast.success("Product added!", {
                   position: "top-center",
@@ -66,7 +64,7 @@ function Post() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="border p-6 my-2 rounded-md shadow-sm"
+      className="border p-2 md:p-6 my-2 rounded-md shadow-sm"
     >
       <textarea
         {...register("content")}
@@ -74,15 +72,15 @@ function Post() {
         className="textarea textarea-bordered textarea-lg w-full"
       ></textarea>
       <div className="flex w-full justify-center items-center">
-        <label className="label w-1/3">
+        <label className="label w-1/2 md:w-1/3">
           <input {...register("picture")} type="file" required />
-          <div className="flex px-4">
+          <div className="flex md:px-4">
             <FcAddImage size={24} className="mr-2" />
             Add Photo
           </div>
         </label>
         <input
-          className="w-2/3 border font-bold bg-green-300 h-9 rounded-md"
+          className="w-1/2 md:w-2/3 border font-bold bg-green-300 h-9 rounded-md"
           type="submit"
         />
       </div>

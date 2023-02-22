@@ -2,7 +2,7 @@ import React from "react";
 
 function RightSidebar() {
   return (
-    <div>
+    <div className="hidden md:block">
       <h4 className="text-xl font-semibold text-gray-400 pb-4 pt-14">
         Suggested Group
       </h4>

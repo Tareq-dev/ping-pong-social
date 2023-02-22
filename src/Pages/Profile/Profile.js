@@ -8,13 +8,13 @@ function Profile() {
   return (
     <div className="md:px-8">
       <div className="w-full flex">
-        <div className="w-1/5">
+        <div className="md:w-1/5">
           <LeftSidebar />
         </div>
-        <div className="w-3/5 px-4 py-8">
+        <div className="w-full md:w-3/5 px-4 py-8">
           <MainProfile />
         </div>
-        <div className="w-1/5">
+        <div className="md:w-1/5">
           <RightSidebar />
         </div>
       </div>
