@@ -13,4 +13,4 @@ Use Package :
 ## Demo
 
 
-https://ping-pong.netlify.app/
+https://ping-pong-social.netlify.app/
